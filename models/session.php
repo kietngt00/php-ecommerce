@@ -34,11 +34,10 @@ class Session {
     return session_id();
   }
 
-  function end() {
+  public static function end() {
     unset($_SESSION['userId']);
     unset($_SESSION['role']);
-    session_unset();
-    session_destroy();
+    return session_destroy();
   }
 
   /** Authentication */
